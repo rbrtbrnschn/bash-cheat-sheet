@@ -1,4 +1,4 @@
-# Bash Cheat Sheet
+# Bash Cheat Sheet | Annalee
 Modular database storing frequently used snippets, easily accessible by one command, which copies the snippet to your clipboard.
 ## TODO
 
