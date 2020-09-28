@@ -10,6 +10,8 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [ ] extract bcs into search allowing for `bcs init` setting up framework, etc
 
+* [ ] setup rbrtbrnsch.github.io as quick preview of `Annalee`
+
 ## Installation
 ```bash
 git clone https://github.com/rbrtbrnschn/bash-cheat-sheet.git
