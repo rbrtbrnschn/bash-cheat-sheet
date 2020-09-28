@@ -2,7 +2,7 @@
 Modular database storing frequently used snippets, easily accessible by one command, which copies the snippet to your clipboard.
 ## TODO
 
-* [ ] add auto update function
+* [X] add auto update function
 
 * [ ] add install/uninstall snippet
 
