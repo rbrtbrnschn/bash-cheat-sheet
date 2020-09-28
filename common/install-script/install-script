@@ -1,0 +1,18 @@
+#!/bin/bash
+EXEC="PLACEHOLDER"
+BIN="/usr/local/bin"
+SRC="$BIN/${SRC}-src"
+
+function uninstall {
+	sudo rm -rf $SRC
+	sudo rm -f $BIN/$EXEC
+}
+
+function install {
+	uninstall
+	sudo cp -a "$PWD" "$SRC"
+	sudo cp -a $EXEC "$BIN/$EXEC"
+	echo "Installation Completed."
+}
+
+install
