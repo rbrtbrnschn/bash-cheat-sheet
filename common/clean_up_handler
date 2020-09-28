@@ -1,0 +1,23 @@
+#!/bin/bash
+# Use "TMP_DIR" As A Temporary Folder
+# It Will Be Removed On Crash / Exit
+
+function handle_exit {
+	# add cleanup
+		rm -rf $TMP_DIR
+	exit 1
+}
+
+trap handle_exit 0 1 SIGHUP SIGINT SIGKILL SIGTERM SIGSTOP
+
+
+#                    SIGNALS
+
+#    NAME        ID               EFFECT
+#  --------- ---------- --------------------------
+#   SIGHUP           1    hangup
+#   SIGINT           2    interrupted by keyboard
+#   SIGKILL          9    kill signal
+#   SIGTERM         15    termination signal
+#   SIGSTOP   17,19,23    stop the process
+

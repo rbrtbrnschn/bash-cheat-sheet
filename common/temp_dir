@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Creating Custom Directory
+RAND_DIR="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1)"
+export TMP_DIR="/tmp/$RAND_DIR"
+mkdir $TMP_DIR
+
+# Handle Cleanup
+function handle_exit {
+	rm -rf $TMP_DIR
+}
+
+trap handle_exit 0 1 SIGHUP SIGINT SIGKILL SIGTERM SIGSTOP
+
+#                    SIGNALS
+
+#    NAME        ID               EFFECT           
+#  --------- ---------- -------------------------- 
+#   SIGHUP           1    hangup                   
+#   SIGINT           2    interrupted by keyboard  
+#   SIGKILL          9    kill signal              
+#   SIGTERM         15    termination signal       
+#   SIGSTOP   17,19,23    stop the process         
+
+# When Using "temp_dir" In A Script, Make Sure To Source It
+# Rather Than Simply Executing It With: "./temp_dir"
