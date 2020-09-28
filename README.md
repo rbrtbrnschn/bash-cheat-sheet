@@ -4,7 +4,7 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] add auto update function
 
-* [ ] add install/uninstall snippet
+* [X] add install/uninstall snippet
 
 * [ ] add create framework snippet
 
