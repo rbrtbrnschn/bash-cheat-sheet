@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function handle_exit {
+	// add cleanup
+		echo "haha it failed"
+	exit 1
+}
+echo $hi
+
+trap handle_exit 0 SIGHUP SIGINT SIGQUIT SIGABRT SIGTERM
