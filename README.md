@@ -8,6 +8,8 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [ ] add create framework snippet
 
+* [ ] extract bcs into search allowing for `bcs init` setting up framework, etc
+
 ## Installation
 ```bash
 git clone https://github.com/rbrtbrnschn/bash-cheat-sheet.git
