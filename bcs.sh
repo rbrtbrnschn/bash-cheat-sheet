@@ -3,6 +3,7 @@ BIN="/usr/local/bin"
 if [ $0 == "$BIN/bcs" ]; then export SRC="$BIN/bash-cheat-sheet";
 else export SRC="$PWD"; fi
 export COMMON="$SRC/common"
+$SRC/update.sh
 
 # Exit Codes
 FOUND_MUTLIPLE=203
