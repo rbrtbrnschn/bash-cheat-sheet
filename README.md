@@ -6,7 +6,7 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] add install/uninstall snippet
 
-* [ ] add create framework snippet
+* [X] add create framework snippet
 
 * [X] extract bcs into search allowing for `bcs init` setting up framework, etc
 
