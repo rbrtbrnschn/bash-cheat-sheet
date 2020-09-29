@@ -35,6 +35,7 @@ export -f require
 	[ ${#GREP} -eq 0 ] && echo "source $HOME/.bcsrc" >> $HOME/.bashrc
 }
 
+uninstall
 setup_bcsrc
 sudo cp -a $PWD /usr/local/bin/bash-cheat-sheet
 sudo cp -a bcs /usr/local/bin/bcs

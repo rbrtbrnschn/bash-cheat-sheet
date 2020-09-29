@@ -29,7 +29,6 @@ while getopts ":-:" OPTION; do
 	esac
 done
 $SRC/loggers.sh
-. $EXEC_DIR/.envrc
 
 VALID_COMMANDS="help init search install version"
 COMMAND="$1" && shift
