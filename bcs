@@ -3,6 +3,8 @@ export BIN="/usr/local/bin"
 export EXEC_DIR="$BIN/bash-cheat-sheet"
 export SRC="$EXEC_DIR/src"
 export COMMON="$EXEC_DIR/common"
+export BCS="$PWD/.bcs"
+export BCS_MODULES="$PWD/bcs_modules"
 export DEBUG=0
 export ERROR=0
 export INFO=0
@@ -34,4 +36,3 @@ COMMAND="$1" && shift
 ARGS="$*" && shift $#
 
 [[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || "$SRC/help.sh"
-echo $BITCH

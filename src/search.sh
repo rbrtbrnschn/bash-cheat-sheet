@@ -1,23 +1,19 @@
 #!/bin/bash
 
-# Exit Codes
-FOUND_MUTLIPLE=203
-FOUND_ONE=201
-FOUND_NONE=204
-SNIPPET_ADDED=210
+# TODO store modules on remote and download from there
 
 FILE=( $(find $COMMON -iname "*$1*" -type f) )
 RES_LENGTH=${#FILE[@]}
 
-if [ $RES_LENGTH -gt 1 ]; then
-	cat ${FILE[0]} | xclip -sel clip || cat $FILE
-	exit $FOUND_MULTIPLE
+if [ "$1" == "" ]; then
+	echo "missing search query"
+elif [ $RES_LENGTH -gt 1 ]; then
+	echo "${FILE[0]}"
 elif [ $RES_LENGTH -eq 1 ]; then
-	cat $FILE | xclip -sel clip || cat $FILE
-	exit $FOUND_ONE
+	echo "$FILE"
 else
-	echo "please be more precise"
-	exit $FOUND_NONE
+	echo "module '$1' does not exist"
 fi
+exit 0
 
 

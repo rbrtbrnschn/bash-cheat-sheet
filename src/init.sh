@@ -10,6 +10,8 @@ while getopts ":y" OPTION; do
 done
 
 function init {
+	local PACKAGE_FILE="package.lee" 
+
 	local DEFAULT="none"
 	local PROJECT_NAME
 	[ $USE_DEFAULTS -eq 1 ] && read -p "Project Name ($DEFAULT) " PROJECT_NAME
@@ -24,8 +26,9 @@ function init {
 	local AUTHOR
 	[ $USE_DEFAULTS -eq 1 ] && read -p "Author ($DEFAULT) " AUTHOR
 	[ "$AUTHOR" == "" ] && AUTHOR=$DEFAULT
-
-	echo -e "PROJECT_NAME=$PROJECT_NAME\nVERSION_NUMBER=$VERSION_NUMBER\nAUTHOR=$AUTHOR" > $PWD/.env
+	
+	mkdir $BCS
+	echo -e "PROJECT_NAME=$PROJECT_NAME\nVERSION_NUMBER=$VERSION_NUMBER\nAUTHOR=$AUTHOR" > $PWD/$PACKAGE_FILE
 
 }
 
