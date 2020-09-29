@@ -8,7 +8,7 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [ ] add create framework snippet
 
-* [ ] extract bcs into search allowing for `bcs init` setting up framework, etc
+* [X] extract bcs into search allowing for `bcs init` setting up framework, etc
 
 * [ ] setup rbrtbrnsch.github.io as quick preview of `Annalee`
 
