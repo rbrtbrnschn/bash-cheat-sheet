@@ -30,8 +30,9 @@ while getopts ":-:" OPTION; do
 done
 $SRC/loggers.sh
 
-VALID_COMMANDS="help init search install version"
+VALID_COMMANDS="help init search install download version"
 COMMAND="$1" && shift
 ARGS="$*" && shift $#
 
 [[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || "$SRC/help.sh"
+
