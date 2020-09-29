@@ -1,7 +1,12 @@
 #!/bin/bash
 
-./uninstall.sh
+function uninstall {
+	sudo rm -rf /usr/local/bin/bash-cheat-sheet
+	sudo rm -rf /usr/local/bin/bsc
+}
+uninstall
+
 sudo cp -a $PWD /usr/local/bin/bash-cheat-sheet
-sudo cp -a bcs.sh /usr/local/bin/bcs
+sudo cp -a bcs /usr/local/bin/bcs
 echo "Installation completed."
-echo "Use 'bcs <name>' to find your snippet."
+echo "Use 'bcs help' for more information."

@@ -1,0 +1,37 @@
+#!/bin/bash
+export BIN="/usr/local/bin"
+export EXEC_DIR="$BIN/bash-cheat-sheet"
+export SRC="$EXEC_DIR/src"
+export COMMON="$EXEC_DIR/common"
+export DEBUG=0
+export ERROR=0
+export INFO=0
+
+function debug {
+	export EXEC_DIR="$PWD"
+	export SRC="$EXEC_DIR/src"
+	export COMMON="$EXEC_DIR/common"
+	export DEBUG=1
+}
+
+while getopts ":-:" OPTION; do
+	case $OPTION in
+		-)
+			case $OPTARG in
+				debug)
+					debug
+					shift
+				;;
+			esac
+		;;
+	esac
+done
+$SRC/loggers.sh
+. $EXEC_DIR/.envrc
+
+VALID_COMMANDS="help init search install version"
+COMMAND="$1" && shift
+ARGS="$*" && shift $#
+
+[[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || "$SRC/help.sh"
+echo $BITCH

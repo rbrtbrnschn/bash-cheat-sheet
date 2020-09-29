@@ -1,7 +1,7 @@
 #°/bin/bash
 
 function __msg_debug {
-	[ "${DEBUG}" == "1" ] && echo -e "starting in debug mode" && export SRC="$PWD"
+	[ "${DEBUG}" == "1" ] && echo -e "[DEBUG]"
 }
 
 function __msg_error {
