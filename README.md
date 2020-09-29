@@ -10,6 +10,10 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] extract bcs into search allowing for `bcs init` setting up framework, etc
 
+* [X] `bcs install`
+
+* [ ] setup webhosting allowing for publishing module / snippet to 'Annalee'
+
 * [ ] setup rbrtbrnsch.github.io as quick preview of `Annalee`
 
 ## Installation
