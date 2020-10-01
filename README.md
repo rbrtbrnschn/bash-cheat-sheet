@@ -16,11 +16,11 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] setup module manager hosting wise, currently allows getting module by name, compressing to tarball and download module
 
-* [ ] setup cross origin request / take a look at nginx setup again
+* [X] setup cross origin request / take a look at nginx setup again
+
+* [X] setting up annalee.rbrtbrnschn.dev
 
 * [ ] setup webhosting allowing for publishing module / snippet to `Annalee`
-
-* [ ] setup rbrtbrnsch.github.io as quick preview of `Annalee`
 
 ## Installation
 ```bash
