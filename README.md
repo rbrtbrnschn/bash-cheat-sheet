@@ -53,4 +53,4 @@ Adding a readme is not necessary but helpfull keeping your snippets oraganized, 
 
 ###### Honorable mentions: 
 
-- 'I will survive by Gloria Gaynor'
+> - 'I will survive by Gloria Gaynor'
