@@ -22,6 +22,10 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] setup webhosting allowing for publishing module / snippet to `Annalee`
 
+* [ ] clean up
+
+* [ ] maybe docs?
+
 ## Installation
 ```bash
 git clone https://github.com/rbrtbrnschn/bash-cheat-sheet.git
