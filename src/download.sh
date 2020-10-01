@@ -13,6 +13,12 @@ function handle_exit {
 
 trap handle_exit 0 1 SIGHUP SIGINT SIGKILL SIGTERM SIGSTOP
 
-curl "https://doesisaacbeat.me/get/$MODULE" --output $TMP_DIR/$MODULE.tar
-tar -c $PWD/packages/$MODULE -xvf $TMP_DIR/$MODULE.tar
-# TODO Test & Enabled Cross Origin Requests
+URL="https://annalee.rbrtbrnschn.dev/$MODULE"
+curl -O -J "$URL"
+STATUSCODE=$( curl -s -o /dev/null -I -w "%{http_code}" $URL)
+[[ $STATUSCODE != 200 ]] && exit 0
+[ ! -d $BCS_MODULES ] && mkdir $BCS_MODULES
+
+mv $MODULE.tar $TMP_DIR/$MODULE.tar
+tar -C $BCS_MODULES -xf $TMP_DIR/$MODULE.tar
+echo "$MODULE installed"

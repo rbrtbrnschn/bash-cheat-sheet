@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # TODO store modules on remote and download from there
-
 FILE=( $(find $COMMON -iname "*$1*" -type f) )
 RES_LENGTH=${#FILE[@]}
 
