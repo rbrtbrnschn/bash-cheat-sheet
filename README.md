@@ -20,7 +20,7 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] setting up annalee.rbrtbrnschn.dev
 
-* [ ] setup webhosting allowing for publishing module / snippet to `Annalee`
+* [X] setup webhosting allowing for publishing module / snippet to `Annalee`
 
 ## Installation
 ```bash
