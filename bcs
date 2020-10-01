@@ -30,7 +30,7 @@ while getopts ":-:" OPTION; do
 done
 $SRC/loggers.sh
 
-export VALID_COMMANDS="help init search install download version list remove i"
+export VALID_COMMANDS="help init search install download version list remove i upload"
 COMMAND="$1" && shift
 ARGS="$*" && shift $#
 
