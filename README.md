@@ -50,3 +50,7 @@ Adding a readme is not necessary but helpfull keeping your snippets oraganized, 
 
 
 > This project was conceived to 'I'll be there for you by The Rembrandts'
+
+###### Honorable mentions: 
+
+- 'I will survive by Gloria Gaynor'
