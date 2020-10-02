@@ -26,6 +26,8 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [ ] write help commands
 
+* [ ] add bearer auth
+
 * [ ] maybe docs?
 
 ## Installation
