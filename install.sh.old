@@ -1,38 +1,39 @@
 #!/bin/bash
 
 function uninstall {
-	sudo rm -rf /usr/local/bin/bash-cheat-sheet
-	sudo rm -rf /usr/local/bin/bsc
-	sudo rm $HOME/.bcsrc
+	local FILES="/usr/local/bin/bash-cheat-sheet /usr/local/bin/bcs $HOME/.bcsrc"
+	local FILE
+	for FILE in $FILES;do
+		if [ -e $FILE ];then
+			sudo rm -rf $FILE
+		fi
+	done
 }
 function setup_bcsrc {
 	echo -e "#!/bin/bash\n" > $HOME/.bcsrc
 echo -e "function require {
+	# Error Handling
+	function missing {
+		local MODULE=\$1
+		echo \"\$(tput setaf 3)[MISSING PACKAGE]: \$(tput sgr0)'\$MODULE' \"
+	}
 	# You Have Gone Too Far
-	[ \"\$1\" == \"\$HOME\" ] && return 1
+	[ \"\$1\" == \"/\" ] && exit 2
 	
 	# Assign Parameters Accordingly
 	[ \$# -eq 1 ] && local CWD=\"\$PWD\" && local QUERY=\"\$1\"
 	[ \$# -eq 2 ] &&	local CWD=\"\$1\" && local QUERY=\"\$2\"
 	local FOUND_MODULE=1
+	trap \"missing \$QUERY\" ERR \$?
 
-	# Error Handling
-	function trapper {
-		local BOO=\$1
-		local QUERY=\$2
-		NOT_FOUND=\"\$(tput setaf 1)[DEPENDENCY]: \$(tput sgr0)missing '\$QUERY'\"
-		
-		[[ \$BOO -eq 1 ]] && echo \"\$NOT_FOUND\"
-	}
-	trap \"trapper \$FOUND_MODULE \$QUERY\" \$?
-	
 	# If In BCS Initialized Project
 	if [ -d \"\$CWD/.bcs\" ]; then
 		
 		# Check For Module
 		for DIR in \$( ls \$CWD/bcs_modules); do
-			[ \"\$DIR\" == \"\$QUERY\" ] && FOUND_MODULE=0 && source \$CWD/bcs_modules/\$DIR/\$DIR
+			[ \"\$DIR\" == \"\$QUERY\" ] && source \$CWD/bcs_modules/\$DIR/\$DIR
 		done
+		[[ \$FOUND_MODULE -eq 1 ]] && exit 1
 	# Else Go Up A Directory Recursively
 	else
 		CWD_UP1=\$(cd \$CWD && cd .. && pwd)
