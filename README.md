@@ -37,11 +37,12 @@ cd bash-cheat-sheet
 `bsc <snippet-name>` automatically copies snippet to clipboard
 
 essential commands:
-  - init
-  - i / download
-  - list
-  - remove
-  - upload
+  - init          | initializes bcs project
+  - i / install   | installs available packages
+  - list          | lists available packages
+  - remove        | removes local package
+  - upload        | uploads local package to database
+  - purge         | removes packages from database
   
   to use packages:
   ```bash
@@ -52,14 +53,15 @@ essential commands:
   
 <hr/>
 
-### Adding Snippets
-
+### Adding Packages
 ```bash
-cd /usr/local/bin/bash-cheat-sheet/common
-mkdir <SnippetName>
-cd <SnippetName>
-touch <SnippetName>
-touch README.md
+bcs init -y
+cd bcs_modules || mkdir bcs_modules && cd bcs_modules
+mkdir <package_name>
+cd <package_name>
+touch <package_name> && touch README.md
+cd ../..
+bcs upload <package_name>
 ```
 
 Adding a readme is not necessary but helpfull keeping your snippets oraganized, making it simpler to query your github fork.
