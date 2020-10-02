@@ -28,6 +28,10 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [ ] add bearer auth
 
+* [ ] change endpoint "/" to "/list" 
+
+* [ ] create spotlight page at "/" 
+
 * [ ] maybe docs?
 
 ## Installation
