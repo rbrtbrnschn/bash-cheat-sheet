@@ -1,3 +1,1 @@
-#!/bin/bash
-
-$SRC/download.sh $*
+install.sh

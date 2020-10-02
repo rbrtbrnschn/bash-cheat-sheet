@@ -12,7 +12,7 @@ function found_nothing {
 function remove {
 	local PACKAGE=$1
 
-	[[ $(ls $COMMON)  =~ "$PACKAGE" ]] && found_package $COMMON/$PACKAGE \
+	[[ $(ls $BCS_MODULES)  =~ "$PACKAGE" ]] && found_package $BCS_MODULES/$PACKAGE \
 	|| found_nothing $PACKAGE
 
 }
