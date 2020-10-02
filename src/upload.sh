@@ -6,7 +6,7 @@ function upload {
 	cd $BCS_MODULES
 	tar cfvz $PACKAGE.tar "$PACKAGE/"
 	curl -F $PACKAGE=@$PACKAGE.tar $URL
-
+	rm $PACKAGE.tar
 	echo "Uploaded $PACKAGE"
 }
 
