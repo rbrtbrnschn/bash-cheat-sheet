@@ -20,7 +20,11 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] setting up annalee.rbrtbrnschn.dev
 
-* [ ] setup webhosting allowing for publishing module / snippet to `Annalee`
+* [X] setup webhosting allowing for publishing module / snippet to `Annalee`
+
+* [ ] clean up
+
+* [ ] maybe docs?
 
 ## Installation
 ```bash
@@ -30,8 +34,22 @@ cd bash-cheat-sheet
 ```
 
 ## Usage
-`basc <snippet-name>` automatically copies snippet to clipboard
+`bsc <snippet-name>` automatically copies snippet to clipboard
 
+essential commands:
+  - init
+  - i / download
+  - list
+  - remove
+  - upload
+  
+  to use packages:
+  ```bash
+   require <package_name>
+   <your script below>
+  ```
+  you will have access to function and exported variables
+  
 <hr/>
 
 ### Adding Snippets
@@ -50,3 +68,7 @@ Adding a readme is not necessary but helpfull keeping your snippets oraganized, 
 
 
 > This project was conceived to 'I'll be there for you by The Rembrandts'
+
+###### Honorable mentions: 
+
+> - 'I will survive by Gloria Gaynor'
