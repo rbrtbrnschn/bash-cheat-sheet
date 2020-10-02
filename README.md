@@ -22,7 +22,7 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] setup webhosting allowing for publishing module / snippet to `Annalee`
 
-* [ ] clean up
+* [X] clean up
 
 * [ ] maybe docs?
 
