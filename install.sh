@@ -1,6 +1,13 @@
 #!/bin/bash
 
 function uninstall {
+	FILES="/usr/local/bin/bash-cheat-sheet /usr/local/bin/bsc $HOME/.bcsrc"
+	for FILE in $FILES;do
+		if [ -e $FILE ];then
+			rm -rf $FILE
+		fi
+	done
+	return
 	sudo rm -rf /usr/local/bin/bash-cheat-sheet
 	sudo rm -rf /usr/local/bin/bsc
 	sudo rm $HOME/.bcsrc
