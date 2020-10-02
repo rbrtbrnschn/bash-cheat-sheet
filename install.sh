@@ -29,7 +29,7 @@ echo -e "function require {
 		local QUERY=\$2
 		NOT_FOUND=\"\$(tput setaf 1)[DEPENDENCY]: \$(tput sgr0)missing '\$QUERY'\"
 		
-		[[ \$BOO -eq 1 ]] && echo \"\$NOT_FOUND\"
+		[[ \$FOUND_MODULE -eq 1 ]] && echo \"\$NOT_FOUND\"
 	}
 	trap \"trapper \$FOUND_MODULE \$QUERY\" \$?
 	
