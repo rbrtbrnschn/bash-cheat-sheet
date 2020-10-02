@@ -24,6 +24,8 @@ Modular database storing frequently used snippets, easily accessible by one comm
 
 * [X] clean up
 
+* [ ] write help commands
+
 * [ ] maybe docs?
 
 ## Installation
