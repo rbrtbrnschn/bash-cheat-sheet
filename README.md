@@ -28,9 +28,9 @@ Simple package manager for bash.
 
 * [ ] add bearer auth
 
-* [ ] change endpoint "/" to "/list" 
+* [X] change endpoint "/" to "/list" 
 
-* [ ] create spotlight page at "/" 
+* [X] create spotlight page at "/" 
 
 * [ ] maybe docs?
 
