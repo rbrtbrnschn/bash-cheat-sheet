@@ -13,7 +13,7 @@ function handle_exit {
 
 trap handle_exit 0 1 SIGHUP SIGINT SIGKILL SIGTERM SIGSTOP
 
-URL="https://annalee.rbrtbrnschn.dev/$MODULE"
+URL="$API/$MODULE"
 curl -O -J "$URL"
 STATUSCODE=$( curl -s -o /dev/null -I -w "%{http_code}" $URL)
 [[ $STATUSCODE != 200 ]] && exit 0

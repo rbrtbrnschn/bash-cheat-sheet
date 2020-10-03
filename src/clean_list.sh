@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function clean_list {
-	local URL="https://annalee.rbrtbrnschn.dev/"
+	local URL="$API/list"
 	RAW=$(curl -s $URL)
 	echo "${RAW:1:$((${#RAW} -4))}"
 

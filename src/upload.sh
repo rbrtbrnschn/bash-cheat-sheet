@@ -2,7 +2,7 @@
 
 function upload {
 	local PACKAGE=$1
-	local URL="https://annalee.rbrtbrnschn.dev/$PACKAGE"
+	local URL="$API/$PACKAGE"
 	cd $BCS_MODULES
 	tar cfvz $PACKAGE.tar "$PACKAGE/"
 	curl -F $PACKAGE=@$PACKAGE.tar $URL

@@ -5,6 +5,7 @@ export SRC="$EXEC_DIR/src"
 export COMMON="$EXEC_DIR/common"
 export BCS="$PWD/.bcs"
 export BCS_MODULES="$PWD/bcs_modules"
+export API="https://annalee.rbrtbrnschn.dev/api"
 export DEBUG=0
 export ERROR=0
 export INFO=0
