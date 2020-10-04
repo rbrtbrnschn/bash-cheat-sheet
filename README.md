@@ -26,7 +26,7 @@ Simple package manager for bash.
 
 * [ ] write help commands
 
-* [ ] allowed to usage of command.help files
+* [X] allowed to usage of command.help files
 
 * [X] add bearer auth
 
