@@ -34,7 +34,7 @@ Simple package manager for bash.
 
 * [X] create spotlight page at "/" 
 
-* [ ] maybe docs?
+* [ ] rework require
 
 ## Installation
 ```bash
@@ -50,9 +50,11 @@ essential commands:
   - init          | initializes bcs project
   - i / install   | installs available packages
   - list          | lists available packages
-  - remove        | removes local package
+  - version / v   | shows your current package version
+  - remove / rm   | removes local package
   - upload        | uploads local package to database
   - purge         | removes packages from database
+  - key           | generates API_KEY
   
   to use packages:
   ```bash
@@ -66,15 +68,23 @@ essential commands:
 ### Adding Packages
 ```bash
 bcs init -y
-cd bcs_modules || mkdir bcs_modules && cd bcs_modules
+cd bpm_modules || mkdir bpm_modules && cd bcs_modules
 mkdir <package_name>
 cd <package_name>
-touch <package_name> && touch README.md
+touch <package_name> && touch package.lee
 cd ../..
 bcs upload <package_name>
 ```
 
-Adding a readme is not necessary but helpfull keeping your snippets oraganized, making it simpler to query your github fork.
+#### example package.lee
+
+```
+NAME=sample-package
+VERSION=1.4.2
+AUTHOR=Dr. Bravestone
+CATEGORIES=jumanji sample food
+TAGS=snippet
+```
 
 <hr/> 
 
@@ -83,4 +93,5 @@ Adding a readme is not necessary but helpfull keeping your snippets oraganized, 
 
 ###### Honorable mentions: 
 
+> - 'Un Poco Loco from Coco'
 > - 'I will survive by Gloria Gaynor'
