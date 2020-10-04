@@ -26,7 +26,9 @@ Simple package manager for bash.
 
 * [ ] write help commands
 
-* [ ] add bearer auth
+* [ ] allowed to usage of command.help files
+
+* [X] add bearer auth
 
 * [X] change endpoint "/" to "/list" 
 
