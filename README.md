@@ -73,7 +73,7 @@ mkdir <package_name>
 cd <package_name>
 touch <package_name> && touch package.lee
 cd ../..
-bcs upload <package_name>
+bpm upload <package_name>
 ```
 
 #### example package.lee
