@@ -1,10 +1,11 @@
 #!/bin/bash
 export BIN="/usr/local/bin"
-export EXEC_DIR="$BIN/bash-cheat-sheet"
+export EXEC_DIR="$BIN/bash-package-manager"
 export SRC="$EXEC_DIR/src"
 export COMMON="$EXEC_DIR/common"
-export BCS="$PWD/.bcs"
-export BCS_MODULES="$PWD/bcs_modules"
+export BCS="$PWD/.bpm"
+export BCS_MODULES="$PWD/bpm_modules"
+export PACKAGELEE="$PWD/package.lee"
 export API="https://annalee.rbrtbrnschn.dev/api"
 export DEBUG=0
 export ERROR=0
@@ -31,9 +32,9 @@ while getopts ":-:" OPTION; do
 done
 $SRC/loggers.sh
 
-export VALID_COMMANDS="help init install version list remove i upload purge"
+export VALID_COMMANDS="help init install i version list remove rm upload purge key clean_list"
 COMMAND="$1" && shift
 ARGS="$*" && shift $#
 
-[[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || "$SRC/help.sh"
+[[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || [ -f "$SRC/$COMMAND.help" ] && "$SRC/$COMMAND.help" || "$SRC/help.sh"
 

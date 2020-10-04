@@ -1,19 +1,15 @@
 #!/bin/bash
 
 function uninstall {
-	FILES="/usr/local/bin/bash-cheat-sheet /usr/local/bin/bsc $HOME/.bcsrc"
+	FILES="/usr/local/bin/bash-package-manager /usr/local/bin/bpm $HOME/.bpmrc"
 	for FILE in $FILES;do
 		if [ -e $FILE ];then
 			rm -rf $FILE
 		fi
 	done
-	return
-	sudo rm -rf /usr/local/bin/bash-cheat-sheet
-	sudo rm -rf /usr/local/bin/bsc
-	sudo rm $HOME/.bcsrc
 }
-function setup_bcsrc {
-	echo -e "#!/bin/bash\n" > $HOME/.bcsrc
+function setup_bpmrc {
+	echo -e "#!/bin/bash\n" > $HOME/.bpmrc
 echo -e "function require {
 	# You Have Gone Too Far
 	[ \"\$1\" == \"\$HOME\" ] && return 1
@@ -29,17 +25,17 @@ echo -e "function require {
 		local QUERY=\$2
 		NOT_FOUND=\"\$(tput setaf 1)[DEPENDENCY]: \$(tput sgr0)missing '\$QUERY'\"
 		
-		[[ \$FOUND_MODULE -eq 1 ]] && echo \"\$NOT_FOUND\"
+		[[ \$BOO -eq 1 ]] && echo \"\$NOT_FOUND\"
 	}
-	trap \"trapper \$FOUND_MODULE \$QUERY\" \$?
 	
 	# If In BCS Initialized Project
-	if [ -d \"\$CWD/.bcs\" ]; then
+	if [ -d \"\$CWD/.bpm\" ]; then
 		
 		# Check For Module
-		for DIR in \$( ls \$CWD/bcs_modules); do
-			[ \"\$DIR\" == \"\$QUERY\" ] && FOUND_MODULE=0 && source \$CWD/bcs_modules/\$DIR/\$DIR
+		for DIR in \$( ls \$CWD/bpm_modules); do
+			[ \"\$DIR\" == \"\$QUERY\" ] && FOUND_MODULE=0 && source \$CWD/bpm_modules/\$DIR/\$DIR
 		done
+		trap \"trapper \$FOUND_MODULE \$QUERY\" \$?
 	# Else Go Up A Directory Recursively
 	else
 		CWD_UP1=\$(cd \$CWD && cd .. && pwd)
@@ -48,15 +44,15 @@ echo -e "function require {
 
 }
 export -f require
-" >> $HOME/.bcsrc
-	GREP=$(cat $HOME/.bashrc | grep "source $HOME/.bcsrc")
-	[ ${#GREP} -eq 0 ] && echo "source $HOME/.bcsrc" >> $HOME/.bashrc
+" >> $HOME/.bpmrc
+	GREP=$(cat $HOME/.bashrc | grep "source $HOME/.bpmrc")
+	[ ${#GREP} -eq 0 ] && echo "source $HOME/.bpmrc" >> $HOME/.bashrc
 }
 
 uninstall
-setup_bcsrc
-sudo cp -a $PWD /usr/local/bin/bash-cheat-sheet
-sudo cp -a bcs /usr/local/bin/bcs
+setup_bpmrc
+sudo cp -a $PWD /usr/local/bin/bash-package-manager
+sudo cp -a bpm /usr/local/bin/bpm
 echo "Installation completed."
-echo -e "Please do 'source \$HOME/.bashrc' Before Using 'bcs'."
-echo "Use 'bcs help' for more information."
+echo -e "Please do 'source \$HOME/.bashrc' Before Using 'bpm'."
+echo "Use 'bpm help ' for more information."

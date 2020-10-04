@@ -2,6 +2,7 @@
 
 REMOTE_MODULES=$($SRC/clean_list.sh)
 LOCAL_MODULES=""
+[ ! -d $BCS_MODULES ] && mkdir $BCS_MODULES
 for ITEM in $(ls $BCS_MODULES);do
 	LOCAL_MODULES+="$ITEM "
 done
