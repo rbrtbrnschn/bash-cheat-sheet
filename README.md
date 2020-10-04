@@ -1,5 +1,5 @@
-# Bash Cheat Sheet | Annalee
-Simple package manager for bash.
+# Bash Package Manager | Annalee
+Simple package manager for bash @ [rbrtbrnschn.dev](https://annalee.rbrtbrnschn.dev)
 ## TODO
 
 * [X] add auto update function
