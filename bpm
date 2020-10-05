@@ -36,5 +36,5 @@ export VALID_COMMANDS="help init install i version list remove rm upload purge k
 COMMAND="$1" && shift
 ARGS="$*" && shift $#
 
-[[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || [ -f "$SRC/$COMMAND.help" ] && "$SRC/$COMMAND.help" || "$SRC/help.sh"
+[[ "$VALID_COMMANDS" =~ "$COMMAND" && -f "$SRC/$COMMAND.sh" ]] && $SRC/$COMMAND.sh $ARGS || ( [ -f "$SRC/help.$COMMAND" ] && "$SRC/help.$COMMAND" ) || "$SRC/help.sh"
 
